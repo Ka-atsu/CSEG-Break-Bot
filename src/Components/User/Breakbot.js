@@ -7,23 +7,29 @@ import ChatInput from "./ChatInput";
 export default function BreakBot() {
     const [messages, setMessages] = useState([]);
 
-    const getResponse = (text) => {
-        const lower = text.toLowerCase();
+    const getResponse = (input) => {
+        const msg = input.toLowerCase();
 
-        if (lower.includes("tired") || lower.includes("sleepy")) {
-            return "You sound tired. Maybe take a short nap or just close your eyes for a few minutes.";
-        } else if (lower.includes("bored") || lower.includes("lazy")) {
-            return "Bored already? Try playing some music or move around a bit to reset your mood.";
-        } else if (lower.includes("stressed") || lower.includes("anxious")) {
-            return "Take it slow. Breathe in, breathe out. Maybe stretch or just step away from your desk for a bit.";
-        } else if (lower.includes("hungry") || lower.includes("snack")) {
-            return "Grab a quick bite or drink some water. Your brain needs fuel too.";
-        } else if (lower.includes("eye") || lower.includes("screen")) {
-            return "Your eyes need a short break. Look at something far away for a few seconds.";
-        } else if (lower.includes("study") || lower.includes("work")) {
-            return "You’ve been at it for a while. Take 5 minutes to stretch or walk around.";
-        } else {
-            return "Maybe it’s time for a small break — stretch, drink water, or just chill for a bit.";
+        if (msg.includes("tired") || msg.includes("sleepy") || msg.includes("exhausted")) {
+            return "You sound tired. Try taking a quick nap or rest your eyes for a few minutes.";
+        } 
+        else if (msg.includes("bored") || msg.includes("lazy") || msg.includes("unmotivated")) {
+            return "Feeling bored? Play some music or move around for a bit to get your energy back.";
+        } 
+        else if (msg.includes("stressed") || msg.includes("anxious") || msg.includes("pressure")) {
+            return "Take it easy. Breathe slowly, stretch a little, and give yourself a short pause.";
+        } 
+        else if (msg.includes("hungry") || msg.includes("snack") || msg.includes("food")) {
+            return "Don’t work on an empty stomach. Grab something light to eat or drink some water.";
+        } 
+        else if (msg.includes("eye") || msg.includes("screen") || msg.includes("blur")) {
+            return "If your eyes feel strained, look away from the screen for a few seconds to relax them.";
+        } 
+        else if (msg.includes("study") || msg.includes("work") || msg.includes("focus")) {
+            return "You’ve been focused for a while — take 5 minutes to stretch or grab a drink.";
+        } 
+        else {
+            return "Seems like a good time for a break. Stretch, hydrate, or just relax for a minute.";
         }
     };
 
